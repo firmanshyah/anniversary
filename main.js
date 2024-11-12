@@ -11,7 +11,7 @@ const sentences = [
   "Maaf yah telat bikinnya hehe",
   "Walapun udah kita udah gini",
   "Jangan lupakan aku yah",
-  "Nihh ada bunag virtual",
+  "Nihh ada bunga virtual",
   "Kamu kan suka bunga",
   "I Love You❤️",
 ];
