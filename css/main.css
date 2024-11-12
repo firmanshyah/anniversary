@@ -1692,11 +1692,11 @@ body {
 
 @media screen and (max-width: 480px) {
   .flowers {
-    margin-bottom: 70px;
+    margin-bottom: 90px;
   }
 
   .text-container h2 {
     font-size: 1rem;
-    margin-top: 20px;
+    margin-top: 40px;
   }
 }
