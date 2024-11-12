@@ -8,8 +8,8 @@ const audio = new Audio("Romantic_Happy_Birthday.mp3");
 const sentences = [
   "Hallo Kamu",
   "Selamat Anniversary",
-  "Maaf yah telat bikinnya hehe",
-  "Walapun udah kita udah gini",
+  "Maaf yah telat\n bikinnya hehe",
+  "Walapun kita udah gini",
   "Jangan lupakan aku yah",
   "Nihh ada bunga virtual",
   "Kamu kan suka bunga",
@@ -42,18 +42,34 @@ function animateText(sentences) {
     if (index < sentences.length) {
       const sentence = sentences[index];
       textElement.innerHTML = ""; // Kosongkan sebelumnya
-      sentence.split("").forEach((char, i) => {
-        const span = document.createElement("span");
-        span.textContent = char === " " ? "\u00A0" : char;
-        textElement.appendChild(span);
 
-        // Tambahkan animasi pada setiap span
-        span.style.animationDelay = `${i * 0.1}s`; // Setiap huruf muncul secara bertahap
+      // Ganti \n dengan elemen <br> untuk line break
+      const formattedSentence = sentence.split("\n").map((part) => {
+        const div = document.createElement("div");
+        part.split("").forEach((char, i) => {
+          const span = document.createElement("span");
+          span.textContent = char === " " ? "\u00A0" : char; // Menangani spasi
+          div.appendChild(span);
+
+          // Tambahkan animasi delay untuk tiap karakter
+          span.style.animationDelay = `${i * 0.1}s`;
+        });
+        return div;
       });
+
+      // Menambahkan kalimat yang sudah diformat ke dalam textElement
+      formattedSentence.forEach((div) => textElement.appendChild(div));
+
       index++;
-      setTimeout(addNextSentence, sentence.length * 100 + 1200); // Tunggu sampai kalimat selesai
+
+      // Tunggu sampai kalimat selesai muncul sebelum menampilkan kalimat berikutnya
+      setTimeout(() => {
+        addNextSentence();
+      }, sentence.length * 100 + 1000); // Durasi animasi tiap kalimat
     }
   }
+
+  // Mulai menambahkan kalimat pertama
   addNextSentence();
 }
 
