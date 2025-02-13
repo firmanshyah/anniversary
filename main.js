@@ -6,13 +6,14 @@ const textElement = document.querySelector("#text");
 const audio = new Audio("Romantic_Happy_Birthday.mp3");
 
 const sentences = [
-  "Hallo Kamu",
-  "Selamat Anniversary",
-  "Maaf yah telat\n bikinnya hehe",
-  "Walapun kita udah gini",
-  "Jangan lupakan aku yah",
+  "Hallo Abelkuuu",
+  "Selamat Valentine",
+  "Maaf kalau lewat\n online dulu hehe",
+  "Semoga suka yah sayangg",
+  "Tetep sama aku terus yahh",
+  "I'am Always With You",
   "Nihh ada bunga virtual",
-  "Kamu kan suka bunga",
+  "yang asli nyusul",
   "I Love You❤️",
 ];
 
